@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// IN SASS STYLES ARE IMPORTED AS PER BELOW
 import reset from './../../assets/img/reset.svg';
+// IN SASS STYLES ARE IMPORTED AS PER BELOW
 import './styles.scss';
 
 const Search = () => {
@@ -26,9 +26,11 @@ const Search = () => {
   };
 
   const resetSearch = () => {
+    // IF THE drinkSearch STATE IS AN EMPTY STRING, ALERT THE USER
     if (drinkSearch === '') {
       alert('Search is already empty');
     } else {
+      // IF THE drinkSearch STATE HOLDS A VALUE, SET THE drinkSearch STATE BACK TO AN EMPTY STRING
       setDrinkSearch('');
     }
   };
@@ -40,9 +42,11 @@ const Search = () => {
         <div className='inputBox'>
           <input
             className='searchInput'
+            maxlength='16'
             placeholder='search a drink'
             value={drinkSearch}
             onChange={handleChange}></input>
+          {/* RESET BUTTON -- ON CLICK RUNS THE resetSearch FUNCTION */}
           <div onClick={() => resetSearch()}>
             <img className='reset' src={reset} alt='reset button' />
           </div>
