@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // IN SASS STYLES ARE IMPORTED AS PER BELOW
 import './styles.scss';
 
-const SearchPanel = () => {
+const Search = () => {
   // THIS IS HOW YOU DECLARE STATE IN A FUNCTIONAL COMPONENT USING HOOKS, IN THIS CASE DRINK SEARCH IS INITIALLY
   // SET AS '', BUT WILL BE UPDATED WITH EVERY CHARACTER ENTERED INTO THE SEARCH FIELD
   const [drinkSearch, setDrinkSearch] = useState('');
@@ -27,7 +27,7 @@ const SearchPanel = () => {
   return (
     <div className='searchContainer'>
       <div className='searchBox'>
-        <h2>Search bar</h2>
+        <h2>Search Bar</h2>
         <input
           className='searchInput'
           placeholder='search a drink'
@@ -56,4 +56,4 @@ const SearchPanel = () => {
   );
 };
 
-export default SearchPanel;
+export default Search;
