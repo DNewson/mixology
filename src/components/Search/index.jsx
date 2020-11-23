@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 // IN SASS STYLES ARE IMPORTED AS PER BELOW
+import reset from './../../assets/img/reset.svg';
 import './styles.scss';
 
 const Search = () => {
@@ -24,22 +25,38 @@ const Search = () => {
     setDrinkSearch(target);
   };
 
+  const resetSearch = () => {
+    if (drinkSearch === '') {
+      alert('Search is already empty');
+    } else {
+      setDrinkSearch('');
+    }
+  };
+
   return (
     <div className='searchContainer'>
       <div className='searchBox'>
         <h2>Search Bar</h2>
-        <input
-          className='searchInput'
-          placeholder='search a drink'
-          value={drinkSearch}
-          onChange={handleChange}></input>
+        <div className='inputBox'>
+          <input
+            className='searchInput'
+            placeholder='search a drink'
+            value={drinkSearch}
+            onChange={handleChange}></input>
+          <div onClick={() => resetSearch()}>
+            <img className='reset' src={reset} alt='reset button' />
+          </div>
+        </div>
+
         <ul>
           {/* THIS IS HOW THE DRINKS ARE DISPLAYED -- 
           FIRST THE DRINKS ARRAY IS FILTERED BASED ON THE CONTROLLED INPUT STATE VALUE USING 'INCLUDES', THE RESULTING
           ARRAY IS THEN MAPPED OVER AND THE DRINK NAME IS DISPLAYED IN AN LI. THE DRINKS CAN BE SHOWN IN ANY OTHER
           WAY, SUCH AS INSIDE OF A LINK, OR A COMPONENT, ETC.*/}
           {drinks
-            .filter((drink) => drink.name.toLowerCase().includes(drinkSearch))
+            .filter((drink) =>
+              drink.name.toLowerCase().includes(drinkSearch.toLowerCase())
+            )
             .map((drink) => (
               <li
                 onClick={() =>
