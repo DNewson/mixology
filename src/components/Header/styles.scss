@@ -1,0 +1,21 @@
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  .headerMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: fit-content;
+    .title {
+      font-size: 42px;
+      margin-bottom: 0px;
+    }
+    .subtitle {
+      margin-top: 3px;
+      font-size: 12px;
+      margin-left: 5px;
+      line-height: 0.5;
+    }
+  }
+}
