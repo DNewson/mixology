@@ -3,13 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+// ITS BEST TO NOT CHANGE ANYTHING IN HERE, ESPECIALLY WHEN FIRST LEARNING REDUX, UNLESS YOU HAVE A 3RD PARTY
+// PACKAGE THAT SPECIFICALLY SAYS TO INSTALL IN THIS FILE
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
